@@ -10,6 +10,8 @@
 <body>
 <div>Beschleunigung (x, y, z) = (<span id="accel-x"></span>,<span id="accel-y"></span>,<span id="accel-z"></span>)</div>
 <p></p>
+  <div id="gesamt">Gesamtbeschleunigung =</div>
+ <p></p>
 <div>Neigung (x, y, z) = (<span id="neigung-x"></span>,<span id="neigung-y"></span>,<span id="neigung-z"></span>)</div>
 <p></p>
 <div>Kompass (alpha, beta, gamma) = (<span id="orientation-a"></span>,<span id="orientation-b"></span>,<span id="orientation-g"></span>)</div>
@@ -27,6 +29,8 @@ window.addEventListener('devicemotion', function(event){
 document.getElementById('accel-x').innerHTML = Math.round(event.acceleration.x *10)/10 ;
 document.getElementById('accel-y').innerHTML = Math.round(event.acceleration.y *10)/10 ;
 document.getElementById('accel-z').innerHTML = Math.round(event.acceleration.z *10)/10 ;
+  
+  document.getElementById("gesamt").innerHTML = event.acceleration.x + event.acceleration.y + event.acceleration.z;
 
 });
 
